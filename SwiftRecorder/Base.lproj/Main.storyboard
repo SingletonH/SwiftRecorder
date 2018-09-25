@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cWg-iv-fGN">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--录制caf-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SwiftRecorder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPX-y2-pqO">
+                                <rect key="frame" x="30" y="144" width="315" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ek8-IT-b5j"/>
+                                </constraints>
+                                <state key="normal" title="开始录音">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="beganRecod:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9dD-Qh-K0J"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w8k-mA-41j">
+                                <rect key="frame" x="30" y="218" width="315" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="HNF-ds-h0e"/>
+                                </constraints>
+                                <state key="normal" title="结束录音">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopRecod:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gpB-cM-Mwg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPB-To-5CR">
+                                <rect key="frame" x="30" y="366" width="315" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="THg-4x-TwK"/>
+                                </constraints>
+                                <state key="normal" title="ConvertCafToMp3">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="convertCafToMp3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RCl-n0-GtO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pDj-2n-c5A">
+                                <rect key="frame" x="30" y="440" width="315" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="btQ-E1-iRO"/>
+                                </constraints>
+                                <state key="normal" title="录制wav">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="FXN-2O-nH8" kind="push" id="nsU-MK-MHo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mF5-Ss-Pze">
+                                <rect key="frame" x="30" y="292" width="315" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="40Y-oq-fja"/>
+                                </constraints>
+                                <state key="normal" title="播放录音">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="playAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lNX-Ip-x96"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="w8k-mA-41j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="1O9-V6-iMH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="w8k-mA-41j" secondAttribute="trailing" constant="30" id="7Ks-E0-eMn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cPB-To-5CR" secondAttribute="trailing" constant="30" id="9tC-38-2vb"/>
+                            <constraint firstItem="cPB-To-5CR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="IuX-bA-xme"/>
+                            <constraint firstItem="mF5-Ss-Pze" firstAttribute="top" secondItem="w8k-mA-41j" secondAttribute="bottom" constant="30" id="JvR-Aa-lbg"/>
+                            <constraint firstItem="cPB-To-5CR" firstAttribute="top" secondItem="mF5-Ss-Pze" secondAttribute="bottom" constant="30" id="K0J-U5-oMr"/>
+                            <constraint firstItem="rPX-y2-pqO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="LQ1-EQ-WW7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pDj-2n-c5A" secondAttribute="trailing" constant="30" id="YHQ-8J-ZGp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mF5-Ss-Pze" secondAttribute="trailing" constant="30" id="fPw-ul-e7z"/>
+                            <constraint firstItem="pDj-2n-c5A" firstAttribute="top" secondItem="cPB-To-5CR" secondAttribute="bottom" constant="30" id="nGU-bp-cYh"/>
+                            <constraint firstItem="w8k-mA-41j" firstAttribute="top" secondItem="rPX-y2-pqO" secondAttribute="bottom" constant="30" id="oDV-JF-y9I"/>
+                            <constraint firstItem="rPX-y2-pqO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="oVN-yY-KpL"/>
+                            <constraint firstItem="mF5-Ss-Pze" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="sTr-PX-q25"/>
+                            <constraint firstItem="pDj-2n-c5A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="tMk-uV-nct"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rPX-y2-pqO" secondAttribute="trailing" constant="30" id="ux9-1R-Yuj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="录制caf" id="wn2-ep-42x"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="281" y="-737"/>
+        </scene>
+        <!--录制wav-->
+        <scene sceneID="z3G-Gb-4Ta">
+            <objects>
+                <viewController id="FXN-2O-nH8" customClass="WavViewController" customModule="SwiftRecorder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6cI-Hi-iAe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLv-mH-YHG">
+                                <rect key="frame" x="30" y="144" width="315" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="vRJ-xC-cFo"/>
+                                </constraints>
+                                <state key="normal" title="开始录音">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="beganRecod:" destination="FXN-2O-nH8" eventType="touchUpInside" id="FLS-i2-Koj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z2Y-k5-p3B">
+                                <rect key="frame" x="30" y="218" width="315" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="aNm-9f-YAs"/>
+                                </constraints>
+                                <state key="normal" title="结束录音">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopRecod:" destination="FXN-2O-nH8" eventType="touchUpInside" id="0eo-gi-YE0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAb-Eq-0IW">
+                                <rect key="frame" x="30" y="366" width="315" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="V7a-aS-VtY"/>
+                                </constraints>
+                                <state key="normal" title="ConvertWavToAmr">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="convertWavToAmr:" destination="FXN-2O-nH8" eventType="touchUpInside" id="1x4-Ku-3nK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NfS-3F-o3Z">
+                                <rect key="frame" x="30" y="440" width="315" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Mww-7q-X5l"/>
+                                </constraints>
+                                <state key="normal" title="ConvertAmrToWav">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="convertAmrToWav:" destination="FXN-2O-nH8" eventType="touchUpInside" id="LJk-0l-iwB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ab-Gu-CS3">
+                                <rect key="frame" x="30" y="292" width="315" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="h6G-Wd-sLo"/>
+                                </constraints>
+                                <state key="normal" title="播放音频">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="z2Y-k5-p3B" firstAttribute="leading" secondItem="6cI-Hi-iAe" secondAttribute="leading" constant="30" id="5Gr-mm-YsI"/>
+                            <constraint firstItem="7jb-dR-oAG" firstAttribute="trailing" secondItem="z2Y-k5-p3B" secondAttribute="trailing" constant="30" id="9Wt-HX-y7i"/>
+                            <constraint firstItem="DLv-mH-YHG" firstAttribute="leading" secondItem="6cI-Hi-iAe" secondAttribute="leading" constant="30" id="A5V-4r-3TB"/>
+                            <constraint firstItem="7jb-dR-oAG" firstAttribute="trailing" secondItem="8Ab-Gu-CS3" secondAttribute="trailing" constant="30" id="Bga-Ya-j6o"/>
+                            <constraint firstItem="bAb-Eq-0IW" firstAttribute="leading" secondItem="6cI-Hi-iAe" secondAttribute="leading" constant="30" id="Ca1-2Z-SLy"/>
+                            <constraint firstItem="NfS-3F-o3Z" firstAttribute="top" secondItem="bAb-Eq-0IW" secondAttribute="bottom" constant="30" id="KVp-RY-MnB"/>
+                            <constraint firstItem="NfS-3F-o3Z" firstAttribute="leading" secondItem="6cI-Hi-iAe" secondAttribute="leading" constant="30" id="M1k-Fj-RBZ"/>
+                            <constraint firstItem="8Ab-Gu-CS3" firstAttribute="top" secondItem="z2Y-k5-p3B" secondAttribute="bottom" constant="30" id="Wlo-yp-vDd"/>
+                            <constraint firstItem="z2Y-k5-p3B" firstAttribute="top" secondItem="DLv-mH-YHG" secondAttribute="bottom" constant="30" id="WpL-j2-3tG"/>
+                            <constraint firstItem="bAb-Eq-0IW" firstAttribute="top" secondItem="8Ab-Gu-CS3" secondAttribute="bottom" constant="30" id="c3g-mw-9gl"/>
+                            <constraint firstItem="DLv-mH-YHG" firstAttribute="top" secondItem="7jb-dR-oAG" secondAttribute="top" constant="80" id="dF0-Al-jop"/>
+                            <constraint firstItem="7jb-dR-oAG" firstAttribute="trailing" secondItem="bAb-Eq-0IW" secondAttribute="trailing" constant="30" id="e7Q-bC-brn"/>
+                            <constraint firstItem="8Ab-Gu-CS3" firstAttribute="leading" secondItem="7jb-dR-oAG" secondAttribute="leading" constant="30" id="g9s-PD-JSt"/>
+                            <constraint firstItem="7jb-dR-oAG" firstAttribute="trailing" secondItem="NfS-3F-o3Z" secondAttribute="trailing" constant="30" id="pVn-YZ-Tgr"/>
+                            <constraint firstItem="7jb-dR-oAG" firstAttribute="trailing" secondItem="DLv-mH-YHG" secondAttribute="trailing" constant="30" id="zhY-Pm-Ks6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7jb-dR-oAG"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="录制wav" id="Nj8-r4-Qu8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sM4-zA-vrf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="972" y="-727"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Py0-e0-mKV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cWg-iv-fGN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="v9C-PN-a97">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="qhH-aX-sSe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A2w-bm-V58" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-535" y="-737"/>
+        </scene>
+    </scenes>
+</document>
