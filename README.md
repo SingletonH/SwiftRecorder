@@ -13,7 +13,7 @@
 1、转mp3主要依赖于lame
 
 2、wav与amr的转码应该注意录音(AVAudioRecorder)的参数设置，否则可能导致转码不成功eg:
-```swift
+```
 
 letrecordSetting: [String:Any] = [
 
@@ -31,4 +31,4 @@ letrecordSetting: [String:Any] = [
 
         ];
 ```
-项目地址 [https://github.com/SingletonH/SwiftRecorder](https://github.com/SingletonH/SwiftRecorder)
+#### 具体实现请看源码：
