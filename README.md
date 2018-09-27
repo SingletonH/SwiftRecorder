@@ -15,7 +15,7 @@
 2、wav与amr的转码应该注意录音(AVAudioRecorder)的参数设置，否则可能导致转码不成功eg:
 ```
 
-letrecordSetting: [String:Any] = [
+let recordSetting: [String:Any] = [
 
             AVSampleRateKey:NSNumber(value:16000),//采样率
 
