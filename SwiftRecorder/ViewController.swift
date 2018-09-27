@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func convertCafToMp3(_ sender: Any) {
-        
+        recorderManager.convertCafToMp3()
     }
     
 

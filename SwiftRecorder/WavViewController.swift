@@ -23,15 +23,23 @@ class WavViewController: UIViewController {
     }
     
     @IBAction func stopRecod(_ sender: Any) {
-        
+        recorderManager.stopRecord()
+    }
+    
+    @IBAction func playAction(_ sender: Any) {
+        recorderManager.play(recordType: .Wav)
     }
     
     @IBAction func convertWavToAmr(_ sender: Any) {
-    
+        recorderManager.convertWavToAmr()
     }
     
     @IBAction func convertAmrToWav(_ sender: Any) {
-        
+        recorderManager.convertAmrToWav()
     }
-
+    
+    @IBAction func playWav(_ sender: Any) {
+        recorderManager.playWav()
+    }
+    
 }

@@ -156,6 +156,32 @@
                                     <action selector="convertWavToAmr:" destination="FXN-2O-nH8" eventType="touchUpInside" id="1x4-Ku-3nK"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ab-Gu-CS3">
+                                <rect key="frame" x="30" y="292" width="315" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="h6G-Wd-sLo"/>
+                                </constraints>
+                                <state key="normal" title="播放音频">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="playAction:" destination="FXN-2O-nH8" eventType="touchUpInside" id="63g-cb-wJ1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EGZ-bX-0cR">
+                                <rect key="frame" x="30" y="514" width="315" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="iaj-2w-NZy"/>
+                                </constraints>
+                                <state key="normal" title="播放转码后的Wav文件">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="playWav:" destination="FXN-2O-nH8" eventType="touchUpInside" id="eIt-Ml-7tl"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NfS-3F-o3Z">
                                 <rect key="frame" x="30" y="440" width="315" height="44"/>
                                 <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -169,16 +195,6 @@
                                     <action selector="convertAmrToWav:" destination="FXN-2O-nH8" eventType="touchUpInside" id="LJk-0l-iwB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ab-Gu-CS3">
-                                <rect key="frame" x="30" y="292" width="315" height="44"/>
-                                <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="h6G-Wd-sLo"/>
-                                </constraints>
-                                <state key="normal" title="播放音频">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -187,15 +203,18 @@
                             <constraint firstItem="DLv-mH-YHG" firstAttribute="leading" secondItem="6cI-Hi-iAe" secondAttribute="leading" constant="30" id="A5V-4r-3TB"/>
                             <constraint firstItem="7jb-dR-oAG" firstAttribute="trailing" secondItem="8Ab-Gu-CS3" secondAttribute="trailing" constant="30" id="Bga-Ya-j6o"/>
                             <constraint firstItem="bAb-Eq-0IW" firstAttribute="leading" secondItem="6cI-Hi-iAe" secondAttribute="leading" constant="30" id="Ca1-2Z-SLy"/>
-                            <constraint firstItem="NfS-3F-o3Z" firstAttribute="top" secondItem="bAb-Eq-0IW" secondAttribute="bottom" constant="30" id="KVp-RY-MnB"/>
+                            <constraint firstItem="EGZ-bX-0cR" firstAttribute="leading" secondItem="7jb-dR-oAG" secondAttribute="leading" constant="30" id="LaB-7V-JUP"/>
                             <constraint firstItem="NfS-3F-o3Z" firstAttribute="leading" secondItem="6cI-Hi-iAe" secondAttribute="leading" constant="30" id="M1k-Fj-RBZ"/>
+                            <constraint firstItem="EGZ-bX-0cR" firstAttribute="top" secondItem="NfS-3F-o3Z" secondAttribute="bottom" constant="30" id="TS4-V4-noJ"/>
                             <constraint firstItem="8Ab-Gu-CS3" firstAttribute="top" secondItem="z2Y-k5-p3B" secondAttribute="bottom" constant="30" id="Wlo-yp-vDd"/>
                             <constraint firstItem="z2Y-k5-p3B" firstAttribute="top" secondItem="DLv-mH-YHG" secondAttribute="bottom" constant="30" id="WpL-j2-3tG"/>
                             <constraint firstItem="bAb-Eq-0IW" firstAttribute="top" secondItem="8Ab-Gu-CS3" secondAttribute="bottom" constant="30" id="c3g-mw-9gl"/>
                             <constraint firstItem="DLv-mH-YHG" firstAttribute="top" secondItem="7jb-dR-oAG" secondAttribute="top" constant="80" id="dF0-Al-jop"/>
                             <constraint firstItem="7jb-dR-oAG" firstAttribute="trailing" secondItem="bAb-Eq-0IW" secondAttribute="trailing" constant="30" id="e7Q-bC-brn"/>
                             <constraint firstItem="8Ab-Gu-CS3" firstAttribute="leading" secondItem="7jb-dR-oAG" secondAttribute="leading" constant="30" id="g9s-PD-JSt"/>
+                            <constraint firstItem="NfS-3F-o3Z" firstAttribute="top" secondItem="bAb-Eq-0IW" secondAttribute="bottom" constant="30" id="iOk-SW-kyL"/>
                             <constraint firstItem="7jb-dR-oAG" firstAttribute="trailing" secondItem="NfS-3F-o3Z" secondAttribute="trailing" constant="30" id="pVn-YZ-Tgr"/>
+                            <constraint firstItem="7jb-dR-oAG" firstAttribute="trailing" secondItem="EGZ-bX-0cR" secondAttribute="trailing" constant="30" id="wxx-xy-uTv"/>
                             <constraint firstItem="7jb-dR-oAG" firstAttribute="trailing" secondItem="DLv-mH-YHG" secondAttribute="trailing" constant="30" id="zhY-Pm-Ks6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7jb-dR-oAG"/>
@@ -204,7 +223,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sM4-zA-vrf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="972" y="-727"/>
+            <point key="canvasLocation" x="972" y="-727.28635682158927"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Py0-e0-mKV">

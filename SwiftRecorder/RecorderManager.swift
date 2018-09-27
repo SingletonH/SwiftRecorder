@@ -34,14 +34,13 @@ class RecordManager: NSObject {
         } catch let err {
             print("初始化动作失败:\(err.localizedDescription)")
         }
-        
-        let formatIDKey = (recordType == RecordType.Caf) ? NSNumber(value: kAudioFormatLinearPCM) : NSNumber(value: kAudioFormatMPEG4AAC)
-        
+       
         let recordSetting: [String: Any] = [
             AVSampleRateKey: NSNumber(value: 16000),//采样率
-            AVEncoderBitRateKey:NSNumber(value: 32000),
-            AVFormatIDKey: formatIDKey,//音频格式
+            AVEncoderBitRateKey:NSNumber(value: 16000),
+            AVFormatIDKey: NSNumber(value: kAudioFormatLinearPCM),//音频格式
             AVNumberOfChannelsKey: NSNumber(value: 1),//通道数
+            AVLinearPCMBitDepthKey:NSNumber(value: 16),
             AVEncoderAudioQualityKey: NSNumber(value: AVAudioQuality.max.rawValue)//录音质量
         ];
         //开始录音
@@ -50,9 +49,9 @@ class RecordManager: NSObject {
             let timeInterval:TimeInterval = now.timeIntervalSince1970
             let timeStamp = Int(timeInterval)
             recordName = "\(timeStamp)"
-            let fileType = (recordType == RecordType.Caf) ? "caf" : "aac"
-            let filePath = NSHomeDirectory() + "/Documents/\(recordName).\(fileType)"
-            let url = URL(fileURLWithPath: "savePath")
+            let fileType = (recordType == RecordType.Caf) ? "caf" : "wav"
+            let filePath = NSHomeDirectory() + "/Documents/\(recordName!).\(fileType)"
+            let url = URL(fileURLWithPath: filePath)
             recorder = try AVAudioRecorder(url: url, settings: recordSetting)
             recorder!.prepareToRecord()
             recorder!.record()
@@ -76,8 +75,8 @@ class RecordManager: NSObject {
     //播放
     func play(recordType:RecordType) {
         do {
-            let fileType = (recordType == RecordType.Caf) ? "caf" : "aac"
-            let filePath = NSHomeDirectory() + "/Documents/\(recordName).\(fileType)"
+            let fileType = (recordType == RecordType.Caf) ? "caf" : "wav"
+            let filePath = NSHomeDirectory() + "/Documents/\(recordName!).\(fileType)"
             player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: filePath))
             print("播放录音长度：\(player!.duration)")
             player!.play()
@@ -87,9 +86,51 @@ class RecordManager: NSObject {
     }
     
     func convertCafToMp3(){
-        let audioPath = NSHomeDirectory() + "/Documents/\(recordName).caf"
-        let mp3Path = NSHomeDirectory() + "/Documents/\(recordName).mp3"
+        let audioPath = NSHomeDirectory() + "/Documents/\(recordName!).caf"
+        let mp3Path = NSHomeDirectory() + "/Documents/\(recordName!).mp3"
         ConvertMp3().audioPCMtoMP3(audioPath, mp3File: mp3Path)
+        print("caf源文件:\(audioPath)")
+        print("mp3文件:\(mp3Path)")
+    }
+    
+    func convertWavToAmr(){
+        let wavPath = NSHomeDirectory() + "/Documents/\(recordName!).wav"
+        do {
+            let wavData = try Data(contentsOf: URL(fileURLWithPath: wavPath))
+            let amrData = convert16khzWaveToAmr(waveData: wavData)
+            let amrPath = NSHomeDirectory() + "/Documents/\(recordName!).amr"
+            try amrData?.write(to: URL(fileURLWithPath: amrPath))
+            print("wav源文件：\(wavPath)")
+            print("amr文件：\(amrPath)")
+        }catch let err {
+            print("转amr文件异常：\(err.localizedDescription)")
+        }
+        
+    }
+    
+    func convertAmrToWav(){
+        let amrPath = NSHomeDirectory() + "/Documents/\(recordName!).amr"
+        do {
+            let amrData = try Data(contentsOf: URL(fileURLWithPath: amrPath))
+            let wavData = convertAmrWBToWave(data: amrData)
+            let wavPath = NSHomeDirectory() + "/Documents/\(recordName!)_fromAmr.wav"
+            try wavData?.write(to: URL(fileURLWithPath: wavPath))
+            print("amr源文件：\(amrPath)")
+            print("wav文件：\(wavPath)")
+        }catch let err {
+            print("转wav文件异常：\(err.localizedDescription)")
+        }
+    }
+    
+    func playWav(){
+        do {
+            let filePath = NSHomeDirectory() + "/Documents/\(recordName!)_fromAmr.wav"
+            player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: filePath))
+            print("播放录音长度：\(player!.duration)")
+            player!.play()
+        } catch let err {
+            print("播放失败:\(err.localizedDescription)")
+        }
     }
     
 }
